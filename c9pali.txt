@@ -1,0 +1,16 @@
+Create an application of Palindrome in SalesForce.com using Apex programming Language.
+
+public class palindrome {
+    public static void palin(String str){
+        String revStr=str.reverse();
+        System.debug('Reverse string is '+revStr);
+        if(str==revStr){
+             system.debug('String is Palindrom :'+revStr ); 
+		}else{ 
+			 system.debug('String is not Palindrom :'+revStr ); 
+		}
+    }
+}
+
+**
+palindrome.palin('aba');

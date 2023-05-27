@@ -1,0 +1,15 @@
+Create an application of Reverse the String in SalesForce.com using Apex programming Language.
+
+public class reverseString {
+	public static void add(String str){
+		String revStr = ' ';
+		for (Integer i = str.length()-1; i >= 0; i--)
+		{
+			revStr += str.substring(i, i+1);
+		}
+		system.debug(revStr );
+    }
+}
+
+**
+reverseString.add('abacd');

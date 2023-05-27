@@ -1,0 +1,35 @@
+Create an application of Calculator in SalesForce.com using Apex programming Language.
+
+public class calculator {
+	public Decimal num1;
+    public Decimal num2;
+    public Decimal result;
+    
+    public static Decimal add(Decimal num1,Decimal num2){
+        Decimal result=num1+num2;
+        System.debug('Addition is '+result);
+        return result;
+    }
+    public static Decimal sub(Decimal num1,Decimal num2){
+        Decimal result=num1-num2;
+        System.debug('Substaction is '+result);
+        return result;
+    }
+    public static Decimal mul(Decimal num1,Decimal num2){
+        Decimal result=num1*num2;
+        System.debug('Multiplication is '+result);
+        return result;
+    }
+    public static Decimal divide(Decimal num1,Decimal num2){
+        Decimal result=num1/num2;
+        System.debug('Devision is '+result);
+        return result;
+    }
+}
+
+
+**
+calculator.add(6,2);
+calculator.sub(6,2);
+calculator.mul(6,2);
+calculator.divide(6,2);

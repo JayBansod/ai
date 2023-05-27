@@ -1,0 +1,50 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class HospitalChatbot {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Hospital Management Chatbot!");
+
+        while (true) {
+            System.out.println("How can I assist you today?");
+            String userInput = scanner.nextLine();
+
+            if (shouldExit(userInput)) {
+                System.out.println("Thank you for using the Hospital Management Chatbot. Goodbye!");
+                break;
+            }
+
+            String response = generateResponse(userInput.toLowerCase());
+            System.out.println(response);
+
+
+        }
+    }
+
+    public static String generateResponse(String userInput) {
+        String response;
+
+        if (userInput.contains("appointment")) {
+            response = "To book an appointment, please visit our hospital's website or call our appointment hotline.";
+        } else if (userInput.contains("doctor")) {
+            response = "We have a team of highly skilled doctors in various specialties. How can I assist you with a doctor?";
+        } else if (userInput.contains("emergency")) {
+            response = "If you have a medical emergency, please call 911 immediately.";
+        } else if (userInput.contains("visiting hours")) {
+            response = "Our visiting hours are from 9:00 AM to 8:00 PM. Please note that visiting hours may vary for different wards.";
+        } else if (userInput.contains("insurance")) {
+            response = "We accept most major insurance plans. However, it's best to contact your insurance provider for specific coverage details.";
+        } else {
+            response = "I'm sorry, I couldn't understand your request. How can I assist you today?";
+        }
+
+        return response;
+    }
+
+    public static boolean shouldExit(String userInput) {
+        userInput = userInput.toLowerCase();
+        return userInput.contains("exit") || userInput.contains("goodbye") || userInput.contains("bye");
+    }
+}

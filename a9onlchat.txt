@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class OnlineShoppingChatbot {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Online Shopping Chatbot!");
+
+        while (true) {
+            System.out.println("How can I assist you today?");
+            String userInput = scanner.nextLine();
+
+            if (shouldExit(userInput)) {
+                System.out.println("Thank you for using the Online Shopping Chatbot. Happy shopping!");
+                break;
+            }
+
+            String response = generateResponse(userInput.toLowerCase());
+            System.out.println(response);
+
+
+        }
+    }
+
+    public static String generateResponse(String userInput) {
+        String response;
+
+        if (userInput.contains("product")||userInput.contains("products")) {
+            response = "We offer a wide range of products. What specific product are you looking for?";
+        } else if (userInput.contains("order")) {
+            response = "To place an order, please visit our website or download our mobile app.";
+        } else if (userInput.contains("delivery")) {
+            response = "We offer free shipping on orders above RS50. Delivery time usually takes 3-5 business days.";
+        } else if (userInput.contains("return")) {
+            response = "We have a flexible return policy. You can return the product within 30 days of purchase.";
+        } else if (userInput.contains("payment")) {
+            response = "We accept various payment methods including credit cards, debit cards, and PayPal.";
+        } else {
+            response = "I'm sorry, I couldn't understand your request. How can I assist you today?";
+        }
+
+        return response;
+    }
+
+    public static boolean shouldExit(String userInput) {
+        userInput = userInput.toLowerCase();
+        return userInput.contains("exit") || userInput.contains("goodbye") || userInput.contains("bye");
+    }
+}

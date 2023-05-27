@@ -1,0 +1,14 @@
+Create an application of Temperature Conversion from Celsius to Fahrenheit in SalesForce.com using Apex programming Language.
+
+public class temp{
+	public Decimal myValue;
+    
+    public static Decimal getTemp(Decimal c){
+        Decimal myValue=(c*9/5)+32;
+        System.debug('the Fahrenheit temp is '+myValue);
+        return myValue;
+    }
+}
+
+**
+temp.getTemp(40);
